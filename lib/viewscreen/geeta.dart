@@ -50,8 +50,9 @@ class _geetaState extends State<geeta> {
                                 },
                                 child: Row(
                                   children: [
-                                    Image.asset('assets/mor pank.png'),
-                                    Text('भगवत गीता',style: TextStyle(color: Colors.black,fontSize: 30),),
+                                    Image.asset('assets/mor pank.png'),SizedBox(width: 16),
+                                    Container(height: 80,width: 0.4,color: Colors.black,),
+                                    Text(' भगवत गीता',style: TextStyle(color: Colors.black,fontSize: 30),),
                                   ],
                                 ),
                               ),
@@ -68,7 +69,8 @@ class _geetaState extends State<geeta> {
                                 child: Row(
                                   children: [
                                     Image.asset('assets/geeta sar.png'),
-                                    Text('गीता सार',style: TextStyle(color: Colors.black,fontSize: 30),),
+                                    Container(height: 80,width: 0.4,color: Colors.black,),
+                                    Text(' गीता सार',style: TextStyle(color: Colors.black,fontSize: 30),),
                                   ],
                                 ),
                               ),
@@ -85,8 +87,9 @@ class _geetaState extends State<geeta> {
                               },
                                 child: Row(
                                   children: [
-                                    Image.asset('assets/geeta mahataya.png'),
-                                    Text('गीता महात्म्य',style: TextStyle(color: Colors.black,fontSize: 30),),
+                                    Image.asset('assets/geeta mahataya.png'),SizedBox(width: 11),
+                                    Container(height: 80,width: 0.4,color: Colors.black,),
+                                    Text(' गीता महात्म्य',style: TextStyle(color: Colors.black,fontSize: 30),),
                                   ],
                                 ),
                               ),
@@ -102,8 +105,9 @@ class _geetaState extends State<geeta> {
                               },
                                 child: Row(
                                   children: [
-                                    Image.asset('assets/aarti.png'),
-                                    Text('गीता आरती',style: TextStyle(color: Colors.black,fontSize: 30),),
+                                    Image.asset('assets/aarti.png'),SizedBox(width: 11),
+                                    Container(height: 80,width: 0.4,color: Colors.black,),
+                                    Text(' गीता आरती',style: TextStyle(color: Colors.black,fontSize: 30),),
 
                                   ],
                                 ),

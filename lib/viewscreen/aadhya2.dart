@@ -40,9 +40,9 @@ class _aadhyashlokState extends State<aadhyashlok> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 230,left: 20),
+                  padding: const EdgeInsets.only(top: 230,left: 10,right: 10),
                   child: Container(
-                    width: 350,
+                    width: 380,
                     decoration: BoxDecoration(
                         color: Colors.yellow.shade100,
                         borderRadius: BorderRadius.only(
@@ -71,7 +71,7 @@ class _aadhyashlokState extends State<aadhyashlok> {
 Widget aadhya1({String? name1, String? name2, String? name3,String? name4}) {
   return Padding(
     padding: const EdgeInsets.only(top: 20),
-    child: Container(width: 300,
+    child: Container(width: 350,
         decoration: BoxDecoration(color: Colors.orangeAccent,
             borderRadius: BorderRadius.all(Radius.circular(15)
             )),
@@ -95,8 +95,16 @@ Widget aadhya1({String? name1, String? name2, String? name3,String? name4}) {
               ),child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Copy',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25,),),
-                  Text('Share',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25),)
+                  InkWell(
+                    onTap:
+                      () {
+
+                      },child: Text('Copy',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25,),)),
+                  InkWell(
+                  onTap:
+                      () {
+
+                      },child: Text('Share',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25),))
                 ],
               ),
             )
