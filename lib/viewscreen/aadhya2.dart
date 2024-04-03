@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:share_extend/share_extend.dart';
 
 import 'list.dart';
 
@@ -55,7 +57,7 @@ class _aadhyashlokState extends State<aadhyashlok> {
                                   name1: l1[adhIndex]['Number'],
                                   name2: l1[adhIndex]['Aadhya'],
                                 name3: l1[adhIndex]['shlok'][index]['sanskrit'],
-                                  name4: l1[adhIndex]['shlok'][index]['hindi'],
+                                  name4: l1[adhIndex]['shlok'][index]['hindi'],index:index,index2:adhIndex,context: context,
                                 ))),
                   ),
                 ),
@@ -68,7 +70,7 @@ class _aadhyashlokState extends State<aadhyashlok> {
   }
 }
 
-Widget aadhya1({String? name1, String? name2, String? name3,String? name4}) {
+Widget aadhya1({String? name1, String? name2, String? name3,String? name4,required int index,int? index2 , BuildContext? context}) {
   return Padding(
     padding: const EdgeInsets.only(top: 20),
     child: Container(width: 350,
@@ -77,18 +79,21 @@ Widget aadhya1({String? name1, String? name2, String? name3,String? name4}) {
             )),
         child:  Column(
           children: [
+            if(index==0)
             Text(name1!),
+            if(index==0)
             Text(name2!,style: TextStyle(fontSize: 22),),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(name3!,textAlign: TextAlign.center,style: TextStyle(fontSize: 17),),
             ),
+            Divider(color: Colors.white54,indent: 10,endIndent: 10,),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(name4!,textAlign: TextAlign.center,style: TextStyle(fontSize: 17),),
             ),
             Container(
-              height: 35,
+              height: 40,
               decoration: BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),bottomLeft: Radius.circular(10))
@@ -98,13 +103,18 @@ Widget aadhya1({String? name1, String? name2, String? name3,String? name4}) {
                   InkWell(
                     onTap:
                       () {
+                         Clipboard.setData(ClipboardData(text:'${l1[index2!]['shlok'][index]['sanskrit']}   ${l1[index2]['shlok'][index]['hindi']}' ));
+                         // ScaffoldMessenger.of(context!).showSnackBar(SnackBar(content: Text('Text Copied')));
 
-                      },child: Text('Copy',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25,),)),
-                  InkWell(
+                      },
+                      child: Text('Copy',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25,),)),
+
+                   InkWell(
                   onTap:
                       () {
+                        ShareExtend.share('${l1[index2!]['shlok'][index]['sanskrit']}   ${l1[index2]['shlok'][index]['hindi']}', 'text');
 
-                      },child: Text('Share',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25),))
+                      },child: Text('Share',style: TextStyle(color: Colors.yellow.shade800,fontSize: 25),)),
                 ],
               ),
             )
